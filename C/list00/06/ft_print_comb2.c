@@ -22,17 +22,17 @@ Instructions:
 #include <stdio.h>
 #include <unistd.h>
 
-void ft_putchar(char a, char b, char c, char d);
-
 void ft_calc_comb2(char comb[], int indexI, int indexII, int indexIII);
+
+void ft_putchar(char a, char b, char c, char d);
 
 void ft_print_comb2(void);
 
-int main()
-{
-    ft_print_comb2();
-    return 0;
-}
+// int main()
+// {
+//     ft_print_comb2();
+//     return 0;
+// }
 
 void ft_print_comb2(void)
 {
@@ -54,19 +54,6 @@ void ft_print_comb2(void)
     }
 }
 
-void ft_putchar(char a, char b, char c, char d)
-{
-    write(1, &a, 1);
-    write(1, &b, 1);
-    write(1, " ", 1);
-    write(1, &c, 1);
-    write(1, &d, 1);
-    if (!(a == '9' && b == '8' && c == '9' && d == '9'))
-    {
-        write(1, ",  ", 2);
-    }
-}
-
 void ft_calc_comb2(char comb[], int indexI, int indexII, int indexIII)
 {
 
@@ -84,6 +71,19 @@ void ft_calc_comb2(char comb[], int indexI, int indexII, int indexIII)
             comb[indexI] = comb[indexIII] + 1;
             comb[indexII] = '0';
         }
+    }
+}
+
+void ft_putchar(char a, char b, char c, char d)
+{
+    write(1, &a, 1);
+    write(1, &b, 1);
+    write(1, " ", 1);
+    write(1, &c, 1);
+    write(1, &d, 1);
+    if (!(a == '9' && b == '8' && c == '9' && d == '9'))
+    {
+        write(1, ",  ", 2);
     }
 }
 
