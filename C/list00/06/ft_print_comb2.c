@@ -22,7 +22,9 @@ Instructions:
 #include <stdio.h>
 #include <unistd.h>
 
-void ft_putchar(int x, int z);
+void ft_putchar(char a, char b, char c, char d);
+
+void ft_calc_comb2(char comb[], int indexI, int indexII, int indexIII);
 
 void ft_print_comb2(void);
 
@@ -32,16 +34,94 @@ int main()
     return 0;
 }
 
-void ft_print_comb2(void){
-    char n[] = {'0', '0', '0', '0'};
+void ft_print_comb2(void)
+{
+    char comb[] = {'0', '0', '0', '1', '\0'};
 
-    ft_putchar(x,z);
+    while (comb[1] != '9' || comb[2] != '9' || comb[3] != '9')
+    {
+        if (!(comb[1] == '9' && comb[2] == '0' && comb[3] == ':'))
+        {
+            ft_putchar(comb[0], comb[1], comb[2], comb[3]);
+        }
+        ft_calc_comb2(comb, 3, 2, 1);
+    }
 
+    while (comb[0] != '9' || comb[1] != '9')
+    {
+        ft_putchar(comb[0], comb[1], comb[2], comb[3]);
+        ft_calc_comb2(comb, 1, 0, 0);
+    }
 }
 
-void ft_putchar(int x, int z){
-        write(1, x, 1);
-        write(1, "  ", 2);
-        write(1, z, 1);
-        write(1, ", ", 2);
+void ft_putchar(char a, char b, char c, char d)
+{
+    write(1, &a, 1);
+    write(1, &b, 1);
+    write(1, " ", 1);
+    write(1, &c, 1);
+    write(1, &d, 1);
+    if (!(a == '9' && b == '8' && c == '9' && d == '9'))
+    {
+        write(1, ",  ", 2);
+    }
 }
+
+void ft_calc_comb2(char comb[], int indexI, int indexII, int indexIII)
+{
+
+    comb[indexI]++;
+    if (comb[indexI] > '9')
+    {
+        comb[indexII]++;
+        comb[indexI] = '0';
+        if (comb[indexII] > '9')
+        {
+            if (indexI == 3)
+            {
+                comb[indexIII]++;
+            }
+            comb[indexI] = comb[indexIII] + 1;
+            comb[indexII] = '0';
+        }
+    }
+}
+
+// Initial code
+
+// while (comb[1] != '9' || comb[2] != '9' || comb[3] != '9')
+// {
+//     if (!(comb[1] == '9' && comb[2] == '0' && comb[3] == ':'))
+//     {
+//         ft_putchar(comb[0], comb[1], comb[2], comb[3]);
+//     }
+
+//     comb[3]++;
+//     if (comb[3] > '9')
+//     {
+//         comb[2]++;
+//         comb[3] = '0';
+//         if (comb[2] > '9')
+//         {
+//             comb[1]++;
+//             comb[3] = comb[1] + 1;
+//             comb[2] = '0';
+//         }
+//     }
+// }
+
+// while (comb[0] != '9' || comb[1] != '9')
+// {
+//     ft_putchar(comb[0], comb[1], comb[2], comb[3]);
+//     comb[1]++;
+//     if (comb[1] > '9')
+//     {
+//         comb[0]++;
+//         comb[1] = '0';
+//         if (comb[0] > '9')
+//         {
+//             comb[1] = comb[0] + 1;
+//             comb[0] = '0';
+//         }
+//     }
+// }
