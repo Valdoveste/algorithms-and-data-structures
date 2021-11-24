@@ -29,11 +29,11 @@ int ft_pow(int n);
 
 void ft_putchar(char c);
 
-int main()
-{
-    ft_putnbr(42);
-    return 0;
-}
+// int main()
+// {
+//     ft_putnbr(42);
+//     return 0;
+// }
 
 void ft_putnbr(int nb)
 {
