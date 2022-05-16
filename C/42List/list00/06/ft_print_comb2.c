@@ -28,11 +28,11 @@ void ft_putchar(char a, char b, char c, char d);
 
 void ft_print_comb2(void);
 
-// int main()
-// {
-//     ft_print_comb2();
-//     return 0;
-// }
+int main()
+{
+    ft_print_comb2();
+    return 0;
+}
 
 void ft_print_comb2(void)
 {
