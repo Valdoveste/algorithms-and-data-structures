@@ -17,34 +17,35 @@ isUnique('abcaef'); // -> false
 #include <stdio.h>
 #include <unistd.h>
 
-// int isUnique(char *p);
+int isUnique(char *p);
 
-// int main(){
-//     char* paragraph;
+int main(){
+    char* paragraph;
 
-//     paragraph = "abcdaefga";
+    paragraph = "abcdaefga";
 
-//     int result = isUnique(paragraph);
+    int result = isUnique(paragraph);
 
-//     return 0;
-// }
+    return 0;
+}
 
-// int isUnique(char *p){
-//     int     i;
-//     int     j;
+int isUnique(char *p){
+    int     i;
+    int     j;
 
-//     i = 0;
-//     j = 1;
+    i = 0;
+    j = 1;
 
-//     while (p[i] != '\0')
-//     {
-//         while(p[j] != '\0')
-//         {
-//             if(p[i] == p[j])
-//                 return 0;
-//             j++;
-//         }
-//         i++;
-//     }
-//     return 1;
-// }
+    while (p[i] != '\0')
+    {
+        while(p[j] != '\0')
+        {
+            if(p[i] == p[j])
+                return 0;
+            j++;
+        }
+        i++;
+    }
+    return 1;
+}
+
