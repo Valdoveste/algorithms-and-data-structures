@@ -17,18 +17,18 @@ int main()
 
 int ft_strcmp(char *s1, char *s2)
 {
-    int s1Lenght = 0;
-    int s2Lenght = 0;
+    int i = 0;
+    int j = 0;
 
-    while (s1[s1Lenght])
-        s1Lenght++;
+    while (s1[i])
+        i++;
 
-    while (s2[s2Lenght])
-        s2Lenght++;
+    while (s2[j])
+        j++;
 
-    if (s1Lenght == s2Lenght)
+    if (i == j)
         return 0;
-    else if (s1Lenght < s2Lenght)
+    else if (i < j)
         return -1;
     else 
         return 1;
