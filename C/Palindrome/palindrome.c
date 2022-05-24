@@ -8,9 +8,9 @@ int nInverted(int n);
 int main()
 {
     int n;
-    n = 1;
+    n = 1234567899;
 
-    printf("%d", isPalindrome(n));
+    printf("\n%d", isPalindrome(n));
     return 0;
 }
 
@@ -33,15 +33,20 @@ int nInverted(int n)
     int decimalPlaces;
     decimalPlaces = getDecimalPlaces(n);
 
+    printf("%d", decimalPlaces); 
+
     while (decimalPlaces > 0)
     {
         base *= 10;
         decimalPlaces--;
     }
 
+    // printf("%d", decimalPlaces); 
+    // --1000000000
+
     while (n > 0)
     {
-        nInverted += (p * (n % 10));
+        nInverted += (base * (n % 10));
         base /= 10;
         n /= 10;
     }
