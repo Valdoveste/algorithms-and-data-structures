@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "*.js": "javascriptreact",
-        "stdlib.h": "c"
-    },
-    "C_Cpp.errorSquiggles": "Disabled"
-}
